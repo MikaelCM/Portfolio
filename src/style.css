@@ -1,0 +1,266 @@
+:root {
+    --primaria: #4f46e5;
+    --secundaria: #7c3aed;
+    --escuro: #0f172a;
+    --maisEscuro: #0a0f1c;
+    --claro: #e2e8f0;
+    --vidro: rgba(255, 255, 255, 0.1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--escuro);
+    color: var(--claro);
+    min-height: 100dvh;
+}
+
+.particulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+    background: radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%), radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%), var(--maisEscuro);
+}
+
+.navegacao {
+    background-color: rgba(15, 23, 42, 0.8);
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    padding: 1.5rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.menu-link::after {
+    content: "";
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    transition: 0.3s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+#inicio {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.foto-perfil {
+    width: 19em;
+    height: 20em;
+    box-shadow: 0 0 20px rgba(78, 70, 229, 0.452);
+    border-radius: 30%;
+    border: 4px solid var(--vidro);
+    object-fit: cover;
+    transition: transform 0.3s ease-out;
+    animation: flutuar 5s ease-in-out infinite;
+    margin-top: 20px;
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2%);
+    }
+}
+
+h1 {
+    font-size: 3em;
+    color: var(--primaria);
+    font-weight: bold;
+    margin: 20px;
+}
+
+.cabecalho-sub-titulo {
+    font-size: 1.7em;
+    color: var(--claro);
+}
+
+#sobre, #projetos, #contato, #servicos{
+    padding: 6rem 2rem;
+}
+
+.sobre-titulo {
+    font-size: 3rem;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.sobre-container, .meus-servicos-container {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px solid var(--vidro);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.sobre-descricao {
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 2.3rem;
+}
+
+.to-underline {
+    font-style: normal;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    font-weight: normal;
+}
+
+.projetos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projetos-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--vidro);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.projetos-card a {
+    text-decoration: none;
+    color: var(--claro);
+}
+
+.projetos-titulo, .contato-titulo, .meus-servicos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.projetos-card:hover {
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+    transform: translateY(-10px) scale(1.03);
+}
+
+.projetos-imagem {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+figcaption {
+    padding: 1.5rem;
+}
+
+.nome-projetos {
+    margin-bottom: 8px;
+}
+
+.paragrafo-projetos {
+    color: rgba(226, 232, 240, 0.8);
+    line-height: 1.25rem;
+}
+
+.meu-github {
+    text-align: center;
+}
+
+.meus-servicos-container {
+    padding: 2rem 3rem;
+}
+
+.meus-servicos-titulo {
+    margin-bottom: 30px;
+}
+
+.meus-servicos-container ul {
+    font-size: 1.13rem;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#contato {
+    margin-bottom: 50px;
+}
+
+.contato-formulario {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border: 1px solid var(--vidro);
+    border-radius: 16px;
+}
+
+.campo-form {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid var(--vidro);
+    outline: none;
+    transition: border-color 0.2s;
+    color: rgba(255, 255, 255, 0.788);
+    font-size: clamp(1em, 2vw, 1em);
+}
+
+.campo-form:focus {
+    border-color: var(--claro);
+}
+
+.grupo-form {
+    margin-bottom: 1.5rem;
+}
+
+.botao-form {
+    color: var(--claro);
+    background: linear-gradient(45deg, var(--primaria), var(--secundaria));
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.botao-form:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(79, 70, 229, 0.4);
+}
