@@ -18,6 +18,14 @@ body {
     min-height: 100dvh;
 }
 
+strong {
+    text-decoration: underline;
+}
+
+em, strong {
+    font-weight: 500;
+}
+
 .particulas {
     position: fixed;
     top: 0;
