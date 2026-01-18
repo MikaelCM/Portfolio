@@ -1,3 +1,3 @@
 # Portfólio
 
-## Seja bem-vindo ao meu portfólio! 👋
+## Seja bem-vindo ao meu portfólio! 
